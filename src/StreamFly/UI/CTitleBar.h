@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "CCustomButtton.h"
+#include "../global.h"
 
 class CTitleBar : public QWidget
 {
@@ -12,6 +13,7 @@ public:
 
 private:
     void        initUI();
+    MEDIA_TYPE  getMediaType(QString strExt);
 
 private:
     CCustomButtton      *m_pAddInputBtn;
@@ -23,7 +25,7 @@ protected:
     void    mouseMoveEvent(QMouseEvent *event);
 
 signals:
-    void    addMediaItem(QString);
+    void    addedMediaItem(MEDIA_TYPE, QString);
 public slots:
 
 private slots:

@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLayout>
 #include "CMediaItemWidget.h"
+#include "../global.h"
 
 class CMediaListWidget : public QWidget
 {
@@ -23,7 +24,7 @@ signals:
     void    selectMediaItem(QString);
 
 public slots:
-    void    onAddMediaItem(QString strUrl);
+    void    onAddedMediaItem(MEDIA_TYPE type, QString strUrl);
 };
 
 #endif // CMEDIALISTWIDGET_H

@@ -36,7 +36,9 @@ SOURCES += \
     CSFApplication.cpp \
     CSFMainWindow.cpp \
     CSFMainDocument.cpp \
-    UI/MediaWidget/CMediaWidget.cpp
+    UI/MediaWidget/CMediaWidget.cpp \
+    UI/MediaWidget/CPhotoWidget.cpp \
+    UI/MediaWidget/CVideoWidget.cpp
 
 HEADERS += \
     UI/CTitleBar.h \
@@ -51,7 +53,9 @@ HEADERS += \
     CSFApplication.h \
     CSFMainWindow.h \
     CSFMainDocument.h \
-    UI/MediaWidget/CMediaWidget.h
+    UI/MediaWidget/CMediaWidget.h \
+    UI/MediaWidget/CPhotoWidget.h \
+    UI/MediaWidget/CVideoWidget.h
 
 FORMS +=
 

@@ -35,6 +35,6 @@ void CMediaListWidget::initUI(){
 }
 
 //public slots:
-void CMediaListWidget::onAddMediaItem(QString strUrl){
+void CMediaListWidget::onAddedMediaItem(MEDIA_TYPE type, QString strUrl){
 
 }

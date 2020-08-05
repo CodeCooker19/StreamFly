@@ -1,5 +1,7 @@
 #include "CMediaItemWidget.h"
 #include "../global.h"
+#include "UI/MediaWidget/CPhotoWidget.h"
+#include <QLayout>
 
 CMediaItemWidget::CMediaItemWidget(QWidget *parent) : QWidget(parent)
 {
@@ -8,9 +10,16 @@ CMediaItemWidget::CMediaItemWidget(QWidget *parent) : QWidget(parent)
 
 //private:
 void CMediaItemWidget::initUI(){
+    QVBoxLayout *pMainLayout;
 
     setFixedSize(g_sizeScreen.width()/6.6, g_sizeScreen.width()/8.3);
     setRoundedCorners(WIDGET_RADIUS_SIZE);
+
+    pMainLayout = new QVBoxLayout(this);
+    m_pMediaWidget = new CPhotoWidget(this);
+    m_pMediaWidget->setFixedSize(this->width()*0.9, this->height()*0.7);
+    pMainLayout->addWidget(m_pMediaWidget);
+    this->setLayout(pMainLayout);
 
     QPalette pal = this->palette();
     pal.setColor(QPalette::Window, PURPLE_COLOR);

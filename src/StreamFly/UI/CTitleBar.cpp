@@ -5,6 +5,8 @@
 #include <QMouseEvent>
 #include <QPainter>
 #include <QStyleOption>
+#include <QFileDialog>
+#include <QDebug>
 
 CTitleBar::CTitleBar(QWidget *parent) : QWidget(parent)
 {
@@ -43,6 +45,18 @@ void CTitleBar::initUI(){
     this->setLayout(pMainLayout);
 }
 
+MEDIA_TYPE CTitleBar::getMediaType(QString strExt){
+    MEDIA_TYPE type = NONE_MEDIA;
+    if(STR_PHOTO_TYPE.contains(strExt))
+        type = PHOTO_MEDIA;
+    else if(STR_VIDEO_TYPE.contains(strExt))
+        type = VIDEO_MEDIA;
+    else if(STR_AUDIO_TYPE.contains(strExt))
+        type = AUDIA_MEDIA;
+
+    return type;
+}
+
 //protected:
 void CTitleBar::paintEvent(QPaintEvent *)
 {
@@ -69,5 +83,12 @@ void CTitleBar::mouseMoveEvent(QMouseEvent *event)
 
 //private slots:
 void CTitleBar::onAddMediaFile(){
-
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open Media File"),
+                                                      "/home",
+                                                      STR_PHOTO_TYPE + ";;" + STR_VIDEO_TYPE + ";;" + STR_AUDIO_TYPE);
+//    QFileInfo fi(fileName);
+//    QString ext = fi.completeSuffix();
+    MEDIA_TYPE type = getMediaType(QFileInfo(fileName).completeSuffix());
+    qDebug()<< "type:" << type;
+    emit(addedMediaItem(type, fileName));
 }

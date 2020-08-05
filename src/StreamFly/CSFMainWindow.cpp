@@ -7,7 +7,7 @@ CSFMainWindow::CSFMainWindow(QWidget *parent) : QMainWindow(parent)
 {
     initUI();
 
-    connect(m_pTitleBar, SIGNAL(addMediaItem(QString)), m_pMediaListWidget, SLOT(onAddMediaItem(QString)));
+    connect(m_pTitleBar, SIGNAL(addedMediaItem(MEDIA_TYPE, QString)), m_pMediaListWidget, SLOT(onAddedMediaItem(MEDIA_TYPE, QString)));
     connect(m_pMediaListWidget, SIGNAL(selectMediaItem(QString)), m_pStreamMainStage, SLOT(onSelectMediaItem(QString)));
 }
 

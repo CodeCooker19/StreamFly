@@ -8,6 +8,8 @@ class CMediaWidget : public QWidget
     Q_OBJECT
 public:
     explicit CMediaWidget(QWidget *parent = nullptr);
+    void        initBackground();
+    virtual void     importMedia(QString strUrl) = 0;
 
 signals:
 

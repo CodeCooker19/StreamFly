@@ -2,6 +2,7 @@
 #define CMEDIAITEMWIDGET_H
 
 #include <QWidget>
+#include "UI/MediaWidget/CMediaWidget.h"
 
 class CMediaItemWidget : public QWidget
 {
@@ -12,6 +13,9 @@ public:
 private:
     void        initUI();
     void        setRoundedCorners(int radius);
+
+private:
+    CMediaWidget*       m_pMediaWidget;
 
 signals:
 
