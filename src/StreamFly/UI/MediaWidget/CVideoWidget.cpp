@@ -1,6 +1,6 @@
 #include "CVideoWidget.h"
 
-CVideoWidget::CVideoWidget(QWidget *parent) : QWidget(parent)
+CVideoWidget::CVideoWidget(QWidget *parent) : CMediaWidget(parent)
 {
 
 }

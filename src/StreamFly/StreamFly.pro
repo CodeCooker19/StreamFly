@@ -31,14 +31,17 @@ SOURCES += \
     UI/CStreamMainStage.cpp \
     UI/CTransitionWidget.cpp \
     UI/CMediaItemWidget.cpp \
-    UI/CAudioWidget.cpp \
     UI/CMediaListWidget.cpp \
     CSFApplication.cpp \
     CSFMainWindow.cpp \
     CSFMainDocument.cpp \
     UI/MediaWidget/CMediaWidget.cpp \
     UI/MediaWidget/CPhotoWidget.cpp \
-    UI/MediaWidget/CVideoWidget.cpp
+    UI/MediaWidget/CVideoWidget.cpp \
+    UI/MediaWidget/CBlankWidget.cpp \
+    UI/MediaWidget/CCameraWidget.cpp \
+    UI/MediaWidget/CAudioWidget.cpp \
+    UI/CStreamAudioWidget.cpp
 
 HEADERS += \
     UI/CTitleBar.h \
@@ -48,14 +51,17 @@ HEADERS += \
     UI/CStreamMainStage.h \
     UI/CTransitionWidget.h \
     UI/CMediaItemWidget.h \
-    UI/CAudioWidget.h \
     UI/CMediaListWidget.h \
     CSFApplication.h \
     CSFMainWindow.h \
     CSFMainDocument.h \
     UI/MediaWidget/CMediaWidget.h \
     UI/MediaWidget/CPhotoWidget.h \
-    UI/MediaWidget/CVideoWidget.h
+    UI/MediaWidget/CVideoWidget.h \
+    UI/MediaWidget/CBlankWidget.h \
+    UI/MediaWidget/CCameraWidget.h \
+    UI/MediaWidget/CAudioWidget.h \
+    UI/CStreamAudioWidget.h
 
 FORMS +=
 

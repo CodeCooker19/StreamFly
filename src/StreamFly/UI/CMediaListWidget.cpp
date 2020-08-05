@@ -22,8 +22,8 @@ void CMediaListWidget::initUI(){
     m_pGridLayout = new QGridLayout(this);
     this->setLayout(m_pGridLayout);
 
-    for(int i=0; i<12; i++){
-        CMediaItemWidget *pTempMediaItem = new CMediaItemWidget(this);
+    for(int i=0; i<7; i++){
+        CMediaItemWidget *pTempMediaItem = new CMediaItemWidget(NONE_MEDIA, "", this);
         addMediaItem(pTempMediaItem);
     }
 
@@ -36,5 +36,12 @@ void CMediaListWidget::initUI(){
 
 //public slots:
 void CMediaListWidget::onAddedMediaItem(MEDIA_TYPE type, QString strUrl){
+    CMediaItemWidget *pMediaItem = NULL;
+
+    if(type == NONE_MEDIA)
+        return;
+
+    pMediaItem = new CMediaItemWidget(type, strUrl, this);
+
 
 }

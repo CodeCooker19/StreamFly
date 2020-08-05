@@ -3,15 +3,16 @@
 
 #include <QWidget>
 #include "UI/MediaWidget/CMediaWidget.h"
+#include "../global.h"
 
 class CMediaItemWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit CMediaItemWidget(QWidget *parent = nullptr);
+    explicit CMediaItemWidget(MEDIA_TYPE type, QString strUrl, QWidget *parent = nullptr);
 
 private:
-    void        initUI();
+    void        initUI(MEDIA_TYPE type, QString strUrl);
     void        setRoundedCorners(int radius);
 
 private:

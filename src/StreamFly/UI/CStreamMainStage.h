@@ -5,7 +5,7 @@
 #include <QSlider>
 #include "CStreamWidget.h"
 #include "CTransitionWidget.h"
-#include "CAudioWidget.h"
+#include "CStreamAudioWidget.h"
 
 class CStreamMainStage : public QWidget
 {
@@ -21,7 +21,7 @@ private:
     QSlider             *m_pFadeBar;
     CStreamWidget       *m_pOutputWidget;
     CTransitionWidget   *m_pTransitionWidget;
-    CAudioWidget        *m_pAudioWidget;
+    CStreamAudioWidget        *m_pAudioWidget;
 
 signals:
 

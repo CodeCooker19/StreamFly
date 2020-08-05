@@ -52,7 +52,7 @@ MEDIA_TYPE CTitleBar::getMediaType(QString strExt){
     else if(STR_VIDEO_TYPE.contains(strExt))
         type = VIDEO_MEDIA;
     else if(STR_AUDIO_TYPE.contains(strExt))
-        type = AUDIA_MEDIA;
+        type = AUDIO_MEDIA;
 
     return type;
 }

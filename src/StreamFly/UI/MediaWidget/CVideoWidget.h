@@ -2,8 +2,9 @@
 #define CVIDEOWIDGET_H
 
 #include <QWidget>
+#include "CMediaWidget.h"
 
-class CVideoWidget : public QWidget
+class CVideoWidget : public CMediaWidget
 {
     Q_OBJECT
 public:

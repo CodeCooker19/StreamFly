@@ -1,23 +1,53 @@
 #include "CMediaItemWidget.h"
-#include "../global.h"
+#include "UI/MediaWidget/CBlankWidget.h"
 #include "UI/MediaWidget/CPhotoWidget.h"
+#include "UI/MediaWidget/CVideoWidget.h"
+#include "UI/MediaWidget/CAudioWidget.h"
+#include "UI/MediaWidget/CCameraWidget.h"
 #include <QLayout>
 
-CMediaItemWidget::CMediaItemWidget(QWidget *parent) : QWidget(parent)
+CMediaItemWidget::CMediaItemWidget(MEDIA_TYPE type, QString strUrl, QWidget *parent) : QWidget(parent)
 {
-    initUI();
+    m_pMediaWidget = NULL;
+    initUI(type, strUrl);
 }
 
 //private:
-void CMediaItemWidget::initUI(){
+void CMediaItemWidget::initUI(MEDIA_TYPE type, QString strUrl){
     QVBoxLayout *pMainLayout;
 
     setFixedSize(g_sizeScreen.width()/6.6, g_sizeScreen.width()/8.3);
     setRoundedCorners(WIDGET_RADIUS_SIZE);
 
     pMainLayout = new QVBoxLayout(this);
-    m_pMediaWidget = new CPhotoWidget(this);
+
+    switch (type) {
+    case NONE_MEDIA:
+        m_pMediaWidget = new CBlankWidget(this);
+        break;
+    case PHOTO_MEDIA:
+        m_pMediaWidget = new CPhotoWidget(this);
+        break;
+    case VIDEO_MEDIA:
+        m_pMediaWidget = new CVideoWidget(this);
+        break;
+    case AUDIO_MEDIA:
+        m_pMediaWidget = new CAudioWidget(this);
+        break;
+    case CAMERA_MEDIA:
+        m_pMediaWidget = new CCameraWidget(this);
+        break;
+    default:
+        m_pMediaWidget = new CBlankWidget(this);
+        break;
+    }
+
+    if(m_pMediaWidget == NULL)
+        return;
+
     m_pMediaWidget->setFixedSize(this->width()*0.9, this->height()*0.7);
+    m_pMediaWidget->importMedia(strUrl);
+
     pMainLayout->addWidget(m_pMediaWidget);
     this->setLayout(pMainLayout);
 

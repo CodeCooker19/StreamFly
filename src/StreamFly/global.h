@@ -12,7 +12,7 @@ enum MEDIA_TYPE{
     NONE_MEDIA = 0,
     PHOTO_MEDIA,
     VIDEO_MEDIA,
-    AUDIA_MEDIA,
+    AUDIO_MEDIA,
     CAMERA_MEDIA
 };
 

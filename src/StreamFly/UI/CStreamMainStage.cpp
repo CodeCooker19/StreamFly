@@ -63,7 +63,7 @@ void CStreamMainStage::initUI(){
     m_pTransitionWidget = new CTransitionWidget(this);
     m_pTransitionWidget->setFixedWidth(g_sizeScreen.width()/3);
 
-    m_pAudioWidget = new CAudioWidget(this);
+    m_pAudioWidget = new CStreamAudioWidget(this);
     m_pAudioWidget->setFixedWidth(g_sizeScreen.width()/15);
 
     pMainLayout = new QHBoxLayout(this);
