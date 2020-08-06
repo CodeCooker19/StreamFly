@@ -13,6 +13,8 @@ void CPhotoWidget::importMedia(QString strUrl){
     pMainLayout = new QVBoxLayout(this);
     pImageLabel = new QLabel(this);
 
+    pMainLayout->setMargin(0);
+    pMainLayout->setSpacing(0);
     pMainLayout->addWidget(pImageLabel);
     this->setLayout(pMainLayout);
 

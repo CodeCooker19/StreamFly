@@ -22,11 +22,10 @@ void CMediaListWidget::initUI(){
     m_pGridLayout = new QGridLayout(this);
     this->setLayout(m_pGridLayout);
 
-    for(int i=0; i<7; i++){
+    for(int i=0; i<17; i++){
         CMediaItemWidget *pTempMediaItem = new CMediaItemWidget(NONE_MEDIA, "", this);
         addMediaItem(pTempMediaItem);
     }
-
 
     QPalette pal = this->palette();
     pal.setColor(QPalette::Window, LIGHT_GRAY_COLOR);
@@ -38,10 +37,6 @@ void CMediaListWidget::initUI(){
 void CMediaListWidget::onAddedMediaItem(MEDIA_TYPE type, QString strUrl){
     CMediaItemWidget *pMediaItem = NULL;
 
-    if(type == NONE_MEDIA)
-        return;
-
     pMediaItem = new CMediaItemWidget(type, strUrl, this);
-
-
+    addMediaItem(pMediaItem);
 }
